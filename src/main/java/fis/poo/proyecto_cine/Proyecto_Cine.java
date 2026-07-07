@@ -11,6 +11,12 @@ package fis.poo.proyecto_cine;
 public class Proyecto_Cine {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        ContenedorPrincipal contenedorPrincipal1 = new ContenedorPrincipal();
+        
+        contenedorPrincipal1.setVisible(true);
+    
+
+
     }
 }
