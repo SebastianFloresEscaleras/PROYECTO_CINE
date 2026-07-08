@@ -16,10 +16,10 @@ public class Sala{
         this.numeroSala = numeroSala;
         this.estaDisponible = estaDisponible;
         this.listaAsiento = new ArrayList<>();
-        for(int i=0; i<20; i++){
-            int posicion=i;
-            Asiento nuevoAsiento=new Asiento(posicion,true);
-            this.listaAsiento.add(nuevoAsiento);
+            for(int i=0; i<10; i++){
+                int posicion=i;
+                Asiento nuevoAsiento=new Asiento(posicion,true);
+                this.listaAsiento.add(nuevoAsiento);
         }
     }
 
