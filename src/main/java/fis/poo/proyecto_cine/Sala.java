@@ -47,7 +47,4 @@ public class Sala{
         this.listaAsiento = listaAsiento;
     }
     
-    
-    
-    
 }
