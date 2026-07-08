@@ -56,6 +56,7 @@ public class ValidadorCliente extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jLabel2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos de usuario para continuar");
         jLabel2.setOpaque(true);
 
