@@ -28,8 +28,6 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     contenedorPrincipal.add(new MetodosAdministrador(), "MetodosAdministrador");
 
 
-    
-    
 
     
     //aqui muestro la priera pantalla

@@ -75,6 +75,7 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jLabel4.setOpaque(true);
 
         jButton1.setText("Regresar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Modificar");
 
@@ -181,9 +182,7 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,6 +200,13 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                 .addGap(70, 70, 70))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        padre.cambiarPanel("ValidadorAdministrador");    
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
