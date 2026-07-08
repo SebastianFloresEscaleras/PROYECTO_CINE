@@ -26,6 +26,12 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     contenedorPrincipal.add(new ValidadorCliente(), "ValidadorCliente");
     contenedorPrincipal.add(new ValidadorAdministrador(), "ValidadorAdministrador");
     contenedorPrincipal.add(new MetodosAdministrador(), "MetodosAdministrador");
+    contenedorPrincipal.add(new EleccionPelicula(), "EleccionPelicula");
+    contenedorPrincipal.add(new EleccionAsiento(), "EleccionAsiento");
+    contenedorPrincipal.add(new BoletoFactura(), "BoletoFactura");
+
+
+
 
 
 
@@ -55,8 +61,7 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         contenedorPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 1000));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1120, 1000));
 
         javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
         contenedorPrincipal.setLayout(contenedorPrincipalLayout);
@@ -80,7 +85,7 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
