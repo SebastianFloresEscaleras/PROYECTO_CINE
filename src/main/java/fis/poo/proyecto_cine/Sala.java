@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * @author Jostin
  */
 public class Sala{
+    /*
     private int numeroSala;
     private boolean estaDisponible;
     private ArrayList<Asiento> listaAsiento;
@@ -46,5 +47,5 @@ public class Sala{
     public void setListaAsiento(ArrayList<Asiento> listaAsiento) {
         this.listaAsiento = listaAsiento;
     }
-    
+    */
 }

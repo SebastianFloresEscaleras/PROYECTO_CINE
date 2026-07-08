@@ -40,10 +40,12 @@ public class ValidadorAdministrador extends javax.swing.JPanel {
         jLabel1.setOpaque(true);
 
         jButton1.setText("Regresar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Ingresar");
 
         jButton3.setText("Siguiente");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
         jLabel2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
@@ -94,6 +96,20 @@ public class ValidadorAdministrador extends javax.swing.JPanel {
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        padre.cambiarPanel("PantallaSeleccionUsuario");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        padre.cambiarPanel("MetodosAdministrador");
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

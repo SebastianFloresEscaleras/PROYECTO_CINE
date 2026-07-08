@@ -23,9 +23,18 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     contenedorPrincipal.add(new PantallaSeleccionUsuario(), "ValidadorAdministrador");
     contenedorPrincipal.add(new ValidadorCliente(), "ValidadorCliente");
     contenedorPrincipal.add(new PantallaSeleccionUsuario(), "PantallaSeleccionUsuario");
+    contenedorPrincipal.add(new ValidadorCliente(), "ValidadorCliente");
+    contenedorPrincipal.add(new ValidadorAdministrador(), "ValidadorAdministrador");
+    contenedorPrincipal.add(new MetodosAdministrador(), "MetodosAdministrador");
+
+
     
+    
+
+    
+    //aqui muestro la priera pantalla
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
-    cl.show(contenedorPrincipal, "ValidadorAdministrador");    
+    cl.show(contenedorPrincipal, "PantallaSeleccionUsuario");    
         
         
         
@@ -48,27 +57,35 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         contenedorPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 1000));
+        setResizable(false);
 
         javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
         contenedorPrincipal.setLayout(contenedorPrincipalLayout);
         contenedorPrincipalLayout.setHorizontalGroup(
             contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 714, Short.MAX_VALUE)
+            .addGap(0, 702, Short.MAX_VALUE)
         );
         contenedorPrincipalLayout.setVerticalGroup(
             contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGap(0, 458, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
