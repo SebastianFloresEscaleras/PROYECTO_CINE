@@ -4,6 +4,7 @@
  */
 package fis.poo.proyecto_cine.Vista;
 
+import fis.poo.proyecto_cine.Controlador.Controlador;
 import fis.poo.proyecto_cine.Vista.BoletoFactura;
 
 /**
@@ -13,7 +14,7 @@ import fis.poo.proyecto_cine.Vista.BoletoFactura;
 public class ContenedorPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ContenedorPrincipal.class.getName());
-
+    private Controlador controlador1 = new Controlador();
     /**
      * Creates new form ContenedorPrincipal
      */

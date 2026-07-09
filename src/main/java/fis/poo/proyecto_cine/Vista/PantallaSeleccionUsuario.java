@@ -88,10 +88,7 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
         // TODO add your handling code here:
     ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
     padre.cambiarPanel("ValidadorCliente");
-    
-    
-    
-        
+
         
     }//GEN-LAST:event_btnClienteActionPerformed
 
