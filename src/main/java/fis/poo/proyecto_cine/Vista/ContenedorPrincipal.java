@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fis.poo.proyecto_cine;
+package fis.poo.proyecto_cine.Vista;
+
+import fis.poo.proyecto_cine.Vista.BoletoFactura;
 
 /**
  *
@@ -61,7 +63,7 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         contenedorPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1120, 1000));
+        setPreferredSize(new java.awt.Dimension(1200, 1000));
 
         javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
         contenedorPrincipal.setLayout(contenedorPrincipalLayout);

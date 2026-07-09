@@ -1,5 +1,5 @@
 
-package fis.poo.proyecto_cine;
+package fis.poo.proyecto_cine.Modelo;
 
 import java.util.ArrayList;
 

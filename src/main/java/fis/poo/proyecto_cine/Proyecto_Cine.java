@@ -4,6 +4,8 @@
 
 package fis.poo.proyecto_cine;
 
+import fis.poo.proyecto_cine.Vista.ContenedorPrincipal;
+
 /**
  *
  * @author sebas
@@ -15,6 +17,9 @@ public class Proyecto_Cine {
         ContenedorPrincipal contenedorPrincipal1 = new ContenedorPrincipal();
         
         contenedorPrincipal1.setVisible(true);
+     
+        
+        
     
 
 
