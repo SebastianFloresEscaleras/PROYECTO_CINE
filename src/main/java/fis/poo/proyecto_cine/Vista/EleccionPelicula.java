@@ -15,6 +15,8 @@ public class EleccionPelicula extends javax.swing.JPanel {
      */
     public EleccionPelicula() {
         initComponents();
+        
+        
     }
 
     /**
@@ -26,10 +28,10 @@ public class EleccionPelicula extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblfuncion1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblfuncion2 = new javax.swing.JLabel();
+        lblfuncion3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -39,11 +41,11 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel1.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Se muestra funcion 1");
-        jLabel1.setOpaque(true);
+        lblfuncion1.setBackground(new java.awt.Color(153, 153, 255));
+        lblfuncion1.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfuncion1.setText("Se muestra funcion 1");
+        lblfuncion1.setOpaque(true);
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 255));
         jLabel2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
@@ -51,17 +53,17 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jLabel2.setText("Seleccione la funcion que desea");
         jLabel2.setOpaque(true);
 
-        jLabel3.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Se muestra funcion 2");
-        jLabel3.setOpaque(true);
+        lblfuncion2.setBackground(new java.awt.Color(153, 153, 255));
+        lblfuncion2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfuncion2.setText("Se muestra funcion 2");
+        lblfuncion2.setOpaque(true);
 
-        jLabel4.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel4.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Se muestra funcion 3");
-        jLabel4.setOpaque(true);
+        lblfuncion3.setBackground(new java.awt.Color(153, 153, 255));
+        lblfuncion3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfuncion3.setText("Se muestra funcion 3");
+        lblfuncion3.setOpaque(true);
 
         jButton1.setText("Elegir");
 
@@ -103,15 +105,15 @@ public class EleccionPelicula extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblfuncion1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblfuncion3, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblfuncion2, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
@@ -141,15 +143,15 @@ public class EleccionPelicula extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblfuncion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(lblfuncion2, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblfuncion3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
@@ -183,12 +185,12 @@ public class EleccionPelicula extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lblfuncion1;
+    private javax.swing.JLabel lblfuncion2;
+    private javax.swing.JLabel lblfuncion3;
     // End of variables declaration//GEN-END:variables
 }

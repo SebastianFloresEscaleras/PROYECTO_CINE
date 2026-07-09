@@ -22,17 +22,17 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="629" max="-2" attributes="0"/>
+                              <Component id="lblfuncion1" min="-2" pref="629" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton1" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel4" min="-2" pref="629" max="-2" attributes="0"/>
+                              <Component id="lblfuncion3" min="-2" pref="629" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton3" pref="287" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" pref="629" max="-2" attributes="0"/>
+                              <Component id="lblfuncion2" min="-2" pref="629" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton2" pref="287" max="32767" attributes="0"/>
                           </Group>
@@ -72,17 +72,17 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButton1" pref="54" max="32767" attributes="0"/>
-                  <Component id="jLabel1" max="32767" attributes="0"/>
+                  <Component id="lblfuncion1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel3" pref="54" max="32767" attributes="0"/>
+                  <Component id="lblfuncion2" pref="54" max="32767" attributes="0"/>
                   <Component id="jButton2" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="10" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButton3" pref="54" max="32767" attributes="0"/>
-                  <Component id="jLabel4" max="32767" attributes="0"/>
+                  <Component id="lblfuncion3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -102,7 +102,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblfuncion1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -128,7 +128,7 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lblfuncion2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -141,7 +141,7 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblfuncion3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="99" type="rgb"/>

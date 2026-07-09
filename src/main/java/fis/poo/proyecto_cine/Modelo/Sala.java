@@ -8,20 +8,14 @@ import java.util.ArrayList;
  * @author Jostin
  */
 public class Sala{
-    /*
+    
     private int numeroSala;
-    private boolean estaDisponible;
-    private ArrayList<Asiento> listaAsiento;
+    private boolean estaDisponible = true;
+    private Asiento[] listaAsiento = {new Asiento("A1", estaDisponible),new Asiento("A2", estaDisponible),new Asiento("A3", estaDisponible),new Asiento("A4", estaDisponible),new Asiento("A5", estaDisponible),new Asiento("A6", estaDisponible),new Asiento("A7", estaDisponible),new Asiento("A8", estaDisponible),new Asiento("A9", estaDisponible) };
 
-    public Sala(int numeroSala, boolean estaDisponible, ArrayList<Asiento> listaAsiento) {
+    public Sala(int numeroSala, boolean estaDisponible) {
         this.numeroSala = numeroSala;
-        this.estaDisponible = estaDisponible;
-        this.listaAsiento = new ArrayList<>();
-            for(int i=0; i<10; i++){
-                int posicion=i;
-                Asiento nuevoAsiento=new Asiento(posicion,true);
-                this.listaAsiento.add(nuevoAsiento);
-        }
+        this.estaDisponible = estaDisponible;            
     }
 
     public int getNumeroSala() {
@@ -38,14 +32,5 @@ public class Sala{
 
     public void setEstaDisponible(boolean estaDisponible) {
         this.estaDisponible = estaDisponible;
-    }
-
-    public ArrayList<Asiento> getListaAsiento() {
-        return listaAsiento;
-    }
-
-    public void setListaAsiento(ArrayList<Asiento> listaAsiento) {
-        this.listaAsiento = listaAsiento;
-    }
-    */
+    }  
 }

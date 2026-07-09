@@ -47,9 +47,6 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         
     }
     
-    public void setTipoUsuario(String tipoUsuario){
-    this.controlador1.crearUsuario(tipoUsuario);
-    }
     
     public Controlador getControlador(){
         return controlador1;
