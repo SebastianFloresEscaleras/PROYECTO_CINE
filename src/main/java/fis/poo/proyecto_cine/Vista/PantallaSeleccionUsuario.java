@@ -79,7 +79,12 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
-    padre.cambiarPanel("ValidadorAdministrador");
+        
+        Controlador miControlador = padre.getControlador();
+        
+        miControlador.crearUsuario("Administrador");
+        
+        padre.cambiarPanel("ValidadorAdministrador");
     
     
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -87,6 +92,11 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         // TODO add your handling code here:
     ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+    
+    Controlador miControlador = padre.getControlador();
+        
+    miControlador.crearUsuario("Cliente");
+            
     padre.cambiarPanel("ValidadorCliente");
 
         

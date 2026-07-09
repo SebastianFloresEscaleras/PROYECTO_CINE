@@ -47,6 +47,14 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         
     }
     
+    public void setTipoUsuario(String tipoUsuario){
+    this.controlador1.crearUsuario(tipoUsuario);
+    }
+    
+    public Controlador getControlador(){
+        return controlador1;
+    }
+    
     public void cambiarPanel(String nombrePanel) {
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
     cl.show(contenedorPrincipal, nombrePanel);
