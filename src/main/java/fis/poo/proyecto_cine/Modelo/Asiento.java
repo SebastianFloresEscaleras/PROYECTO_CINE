@@ -17,8 +17,7 @@ public class Asiento {
         this.posicionAsiento = posicionAsiento;
         this.disponible = disponible;
     }
-    
-    
+   // holaesparaversivale
     
     
     
