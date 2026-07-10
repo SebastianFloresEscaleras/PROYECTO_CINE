@@ -17,7 +17,38 @@ public class Asiento {
         this.posicionAsiento = posicionAsiento;
         this.disponible = disponible;
     }
-   // holaesparaversivale
+   // holi voy a modificar este codigo (daya)
+
+    public String getPosicionAsiento() {
+        return posicionAsiento;
+    }
+
+    public void setPosicionAsiento(String posicionAsiento) {
+        this.posicionAsiento = posicionAsiento;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+    
+    public void ocuparAsiento(){
+        disponible = false;
+    }
+    
+    public void liberarAsiento(){
+        disponible = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Asiento en la posicion: " + posicionAsiento + ", disponible=" + disponible + '}';
+    }
+    
+    
     
     
     
