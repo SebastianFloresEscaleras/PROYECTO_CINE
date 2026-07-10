@@ -46,10 +46,6 @@ public class Asiento {
     @Override
     public String toString() {
         return "Asiento en la posicion: " + posicionAsiento + ", disponible=" + disponible + '}';
-    }
-    
-    
-    
-    
+    } 
     
 }
