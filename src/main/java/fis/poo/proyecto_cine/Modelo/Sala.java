@@ -33,4 +33,43 @@ public class Sala{
     public void setEstaDisponible(boolean estaDisponible) {
         this.estaDisponible = estaDisponible;
     }  
+    
+    //le hago un aporte (daya)
+    
+    public Asiento[] getListaAsiento(){
+        return listaAsiento;
+    }
+    public Asiento buscarAsiento(String posicion){
+        for(Asiento asiento : listaAsiento){
+            if (asiento.getPosicionAsiento().equals(posicion)){
+                return asiento;
+            }
+        }
+        return null;
+    }
+    
+    public boolean reservarAsiento(String posicion){
+        Asiento asiento = buscarAsiento(posicion);
+        if(asiento != null && asiento.isDisponible()){
+            asiento.ocuparAsiento();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean hayAsientosDisponibles(){
+        for(Asiento asiento : listaAsiento){
+            if(asiento.isDisponible()){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void mostrarAsiento(){
+        for(Asiento asiento : listaAsiento){
+            System.out.println(asiento);
+        }
+    }
+    
 }
