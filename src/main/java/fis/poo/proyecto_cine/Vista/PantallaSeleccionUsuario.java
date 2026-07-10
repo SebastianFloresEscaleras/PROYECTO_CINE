@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package fis.poo.proyecto_cine;
+package fis.poo.proyecto_cine.Vista;
+
+import fis.poo.proyecto_cine.Controlador.Controlador;
 
 /**
  *
@@ -13,6 +15,7 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
     /**
      * Creates new form PantallaSeleccionUsuario
      */
+    
     public PantallaSeleccionUsuario() {
         initComponents();
     }
@@ -76,15 +79,26 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
-    padre.cambiarPanel("ValidadorAdministrador");
+        
+        Controlador miControlador = padre.getControlador();
+        
+        miControlador.crearUsuario("Administrador");
+        
+        padre.cambiarPanel("ValidadorAdministrador");
+    
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         // TODO add your handling code here:
     ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
-    padre.cambiarPanel("ValidadorCliente");
     
+    Controlador miControlador = padre.getControlador();
         
+    miControlador.crearUsuario("Cliente");
+            
+    padre.cambiarPanel("ValidadorCliente");
+
         
     }//GEN-LAST:event_btnClienteActionPerformed
 

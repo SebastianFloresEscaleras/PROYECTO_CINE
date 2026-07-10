@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fis.poo.proyecto_cine;
+package fis.poo.proyecto_cine.Vista;
+
+import fis.poo.proyecto_cine.Controlador.Controlador;
+import fis.poo.proyecto_cine.Vista.BoletoFactura;
 
 /**
  *
@@ -11,7 +14,7 @@ package fis.poo.proyecto_cine;
 public class ContenedorPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ContenedorPrincipal.class.getName());
-
+    private Controlador controlador1 = new Controlador();
     /**
      * Creates new form ContenedorPrincipal
      */
@@ -44,6 +47,11 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         
     }
     
+    
+    public Controlador getControlador(){
+        return controlador1;
+    }
+    
     public void cambiarPanel(String nombrePanel) {
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
     cl.show(contenedorPrincipal, nombrePanel);
@@ -61,7 +69,7 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         contenedorPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1120, 1000));
+        setPreferredSize(new java.awt.Dimension(1200, 1000));
 
         javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
         contenedorPrincipal.setLayout(contenedorPrincipalLayout);
