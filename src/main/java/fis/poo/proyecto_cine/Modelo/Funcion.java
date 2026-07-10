@@ -32,6 +32,5 @@ public class Funcion {
         System.out.println("Horarios: " + horario);
         System.out.println("Sala: " + sala1.getNumeroSala());
     }
-    
-    
+
 }
