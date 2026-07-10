@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package fis.poo.proyecto_cine.Modelo;
 
 /**
@@ -24,10 +20,18 @@ public class Funcion {
         this.horario = horario;
         this.pelicula1 = pelicula1;
         this.sala1 = sala1;
-        
-    
     }
     
+    //hago mi aporte (daya)
+    public boolean hayDisponibilidad(){
+        return sala1.hayAsientosDisponibles();
+    }
+    
+    public void mostratInformacion(){
+        System.out.println("Pelicula: " + pelicula1.getNombre());
+        System.out.println("Horarios: " + horario);
+        System.out.println("Sala: " + sala1.getNumeroSala());
+    }
     
     
 }
