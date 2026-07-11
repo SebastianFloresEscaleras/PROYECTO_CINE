@@ -1,13 +1,12 @@
 
-//package fis.poo.proyecto_cine.Modelo;
+package fis.poo.proyecto_cine.Modelo;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 /**
  *
  * @author Jostin
  */
-/*
 public class Validador implements InterfazValidador{
     private ArrayList<String> codigosAdministradores;
     private boolean tieneAcceso;
@@ -43,11 +42,6 @@ public class Validador implements InterfazValidador{
     public void setTieneAcceso(boolean tieneAcceso) {
         this.tieneAcceso = tieneAcceso;
     }
-   
     
     
-    
-    
-      
 }
-*/

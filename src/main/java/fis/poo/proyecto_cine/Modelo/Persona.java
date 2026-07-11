@@ -33,6 +33,10 @@ public abstract class Persona {
     public void settipoCliente(int tipoCliente){
         this.tipoCliente = tipoCliente;
     }
+
+    public String getId() {
+        return id;
+    }
     
     
     

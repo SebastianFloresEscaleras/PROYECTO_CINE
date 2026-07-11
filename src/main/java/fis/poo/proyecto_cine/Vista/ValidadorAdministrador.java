@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package fis.poo.proyecto_cine.Vista;
-
+import fis.poo.proyecto_cine.Controlador.Controlador;
+import fis.poo.proyecto_cine.Modelo.Administrador;
 import fis.poo.proyecto_cine.Vista.ContenedorPrincipal;
+import fis.poo.proyecto_cine.Modelo.Validador;
 
 /**
  *
@@ -41,10 +43,13 @@ public class ValidadorAdministrador extends javax.swing.JPanel {
         jLabel1.setText("Ingrese su codigo unico de administrador ");
         jLabel1.setOpaque(true);
 
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+
         jButton1.setText("Regresar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Ingresar");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Siguiente");
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -109,9 +114,36 @@ public class ValidadorAdministrador extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+    Controlador miControlador = padre.getControlador();
+    
+    if (miControlador.tieneAcceso()) {
         padre.cambiarPanel("MetodosAdministrador");
-        
+    } else {
+        jLabel2.setText("Ingrese su código");
+    }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String codigoIngresado = jTextField1.getText().trim();
+
+    if (codigoIngresado.isEmpty()) {
+        jLabel2.setText("Ingrese un código");
+        return;
+    }
+
+    ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+    Controlador miControlador = padre.getControlador();
+    
+    if (miControlador.validarAdministrador(codigoIngresado)) {
+        jLabel2.setText("Acceso concedido. Presione Siguiente");
+    } else {
+        jLabel2.setText("Código incorrecto, no puede ingresar");
+    }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

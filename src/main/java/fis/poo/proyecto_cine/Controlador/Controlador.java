@@ -10,6 +10,7 @@ import fis.poo.proyecto_cine.Modelo.Funcion;
 import fis.poo.proyecto_cine.Modelo.Pelicula;
 import fis.poo.proyecto_cine.Modelo.Persona;
 import fis.poo.proyecto_cine.Modelo.Sala;
+import fis.poo.proyecto_cine.Modelo.Validador;
 import java.util.ArrayList;
 
 /**
@@ -91,7 +92,17 @@ public class Controlador {
     public Funcion getFuncionElegida(){
         return FuncionElegida;
     }
+    Validador validadorAdmin = new Validador(new java.util.ArrayList<>(), false);
+//nuevos metodos para la pantalla de validar administrador
+public boolean validarAdministrador(String codigo) {
+    Administrador administradorTemp = new Administrador("Admin", codigo, 1);
     
+    return validadorAdmin.validarAdmision(administradorTemp);
+}
+
+public boolean tieneAcceso() {
+    return validadorAdmin.isTieneAcceso();
+}
     
     
 }
