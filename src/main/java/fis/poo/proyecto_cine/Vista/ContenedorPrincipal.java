@@ -14,23 +14,24 @@ import fis.poo.proyecto_cine.Vista.BoletoFactura;
 public class ContenedorPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ContenedorPrincipal.class.getName());
-    private Controlador controlador1 = new Controlador();
+    private final Controlador controlador1 = new Controlador();
+    
     /**
      * Creates new form ContenedorPrincipal
      */
+    
     public ContenedorPrincipal() {
         initComponents();
         
     contenedorPrincipal.setLayout(new java.awt.CardLayout());
-    
-    contenedorPrincipal.add(new PantallaSeleccionUsuario(), "ValidadorAdministrador");
+    contenedorPrincipal.add(new PantallaSeleccionUsuario(this.controlador1), "ValidadorAdministrador");
     contenedorPrincipal.add(new ValidadorCliente(), "ValidadorCliente");
-    contenedorPrincipal.add(new PantallaSeleccionUsuario(), "PantallaSeleccionUsuario");
+    contenedorPrincipal.add(new PantallaSeleccionUsuario(this.controlador1), "PantallaSeleccionUsuario");
     contenedorPrincipal.add(new ValidadorCliente(), "ValidadorCliente");
     contenedorPrincipal.add(new ValidadorAdministrador(), "ValidadorAdministrador");
     contenedorPrincipal.add(new MetodosAdministrador(), "MetodosAdministrador");
-    contenedorPrincipal.add(new EleccionPelicula(), "EleccionPelicula");
-    contenedorPrincipal.add(new EleccionAsiento(), "EleccionAsiento");
+    contenedorPrincipal.add(new EleccionPelicula(this.controlador1), "EleccionPelicula");
+    contenedorPrincipal.add(new EleccionAsiento(this.controlador1), "EleccionAsiento");
     contenedorPrincipal.add(new BoletoFactura(), "BoletoFactura");
 
 
@@ -41,16 +42,17 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     
     //aqui muestro la priera pantalla
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
-    cl.show(contenedorPrincipal, "PantallaSeleccionUsuario");    
-        
-        
+    cl.show(contenedorPrincipal, "PantallaSeleccionUsuario"); 
+    
         
     }
     
     
     public Controlador getControlador(){
-        return controlador1;
+        return this.controlador1;
     }
+    
+    
     
     public void cambiarPanel(String nombrePanel) {
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
@@ -69,17 +71,18 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         contenedorPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        setPreferredSize(new java.awt.Dimension(1400, 1000));
+        setResizable(false);
 
         javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
         contenedorPrincipal.setLayout(contenedorPrincipalLayout);
         contenedorPrincipalLayout.setHorizontalGroup(
             contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+            .addGap(0, 708, Short.MAX_VALUE)
         );
         contenedorPrincipalLayout.setVerticalGroup(
             contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
+            .addGap(0, 377, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,13 +90,12 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -122,9 +124,6 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-        
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ContenedorPrincipal().setVisible(true));
     }

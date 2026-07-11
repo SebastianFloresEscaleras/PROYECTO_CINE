@@ -4,6 +4,8 @@
  */
 package fis.poo.proyecto_cine.Vista;
 
+import fis.poo.proyecto_cine.Controlador.Controlador;
+
 /**
  *
  * @author sebas
@@ -13,7 +15,11 @@ public class EleccionAsiento extends javax.swing.JPanel {
     /**
      * Creates new form EleccionAsiento
      */
-    public EleccionAsiento() {
+    private Controlador controlador1;
+    
+    public EleccionAsiento(Controlador controlador1) {
+        this.controlador1 = controlador1;
+        
         initComponents();
     }
 
@@ -245,6 +251,10 @@ public class EleccionAsiento extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       controlador1.estadoAsiento("A1");
+       //necesito la funcion que me retorne desde controlador si el asiento esta true=disponible o false=ocupado/comprado, esto para retroalimentar al usuario cambiando de color el boton
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

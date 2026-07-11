@@ -4,6 +4,7 @@
  */
 package fis.poo.proyecto_cine.Controlador;
 import fis.poo.proyecto_cine.Modelo.Administrador;
+import fis.poo.proyecto_cine.Modelo.Asiento;
 import fis.poo.proyecto_cine.Modelo.Cliente;
 import fis.poo.proyecto_cine.Modelo.Funcion;
 import fis.poo.proyecto_cine.Modelo.Pelicula;
@@ -20,8 +21,9 @@ public class Controlador {
     //aqui guardo el tipo de persona y sus datos, o por lo menos el contenedor cuando ya existe el objeto solo me queda modificar sus atributos
     
     private Persona persona1;
-    ArrayList<Funcion> listaFunciones = new ArrayList<>();
-    
+    private ArrayList<Funcion> listaFunciones = new ArrayList<>();
+    private Funcion FuncionElegida;
+    //amigos en sala tenemos la sala disponible y como esta en composicion ya se instancian los asientos tambien
     Sala sala1 = new Sala(1, true);
     
     Pelicula peli1 = new Pelicula("Forest gump", 120);
@@ -31,10 +33,34 @@ public class Controlador {
 
     
     public Controlador(){
-        listaFunciones.add(new Funcion("1", "7-9", true, peli1 , sala1));
-        listaFunciones.add(new Funcion("2", "9-11", true, peli2 , sala1));
-        listaFunciones.add(new Funcion("3", "11-13", true, peli3 , sala1));
+        this.listaFunciones.add(new Funcion("1", "7-9", true, peli1 , sala1));
+        this.listaFunciones.add(new Funcion("2", "9-11", true, peli2 , sala1));
+        this.listaFunciones.add(new Funcion("3", "11-13", true, peli3 , sala1));
         
+    }
+    
+    //los que esten false significa que fueron escogidos
+    public void estadoAsiento(String a){
+        for(Asiento rt: sala1.getListaAsiento()){
+            if(rt.getPosicionAsiento().equals(a)){
+                
+                if(rt.getdisponible()==true){
+                    rt.setDisponible(false);
+                }else{
+                rt.setDisponible(true);
+                }
+            }
+        }
+    }
+    
+    //necesito algo para devolver el estado de un asiento pasando la posicion
+    
+    
+    
+    
+    public Funcion getFuncion(int q){
+        Funcion a = listaFunciones.get(q);
+        return a;
     }
     
     
@@ -47,6 +73,7 @@ public class Controlador {
             persona1 = new Administrador(tipoUsuario, tipoUsuario, 0);
         }}
     
+    //pantallaUsuario validacion 1
     public boolean validarCampos(String nombre, String id, int eleccion){
         
         if(nombre == null){return false;};
@@ -55,6 +82,14 @@ public class Controlador {
         
         return true;
         
+    }
+    
+    public void setFuncionElegida(Funcion a){
+    this.FuncionElegida = a;
+    }
+    
+    public Funcion getFuncionElegida(){
+        return FuncionElegida;
     }
     
     

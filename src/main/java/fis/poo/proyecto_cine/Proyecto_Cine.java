@@ -4,7 +4,10 @@
 
 package fis.poo.proyecto_cine;
 
+import fis.poo.proyecto_cine.Controlador.Controlador;
 import fis.poo.proyecto_cine.Vista.ContenedorPrincipal;
+import fis.poo.proyecto_cine.Vista.EleccionPelicula;
+import fis.poo.proyecto_cine.Vista.PantallaSeleccionUsuario;
 
 /**
  *
@@ -17,6 +20,7 @@ public class Proyecto_Cine {
         ContenedorPrincipal contenedorPrincipal1 = new ContenedorPrincipal();
         
         contenedorPrincipal1.setVisible(true);
+
      
         
         

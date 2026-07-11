@@ -15,9 +15,14 @@ public class PantallaSeleccionUsuario extends javax.swing.JPanel {
     /**
      * Creates new form PantallaSeleccionUsuario
      */
+    Controlador controlador1;
     
-    public PantallaSeleccionUsuario() {
+    public PantallaSeleccionUsuario(Controlador controlador1) {
+        this.controlador1 = controlador1;
+        
         initComponents();
+        
+        
     }
 
     /**

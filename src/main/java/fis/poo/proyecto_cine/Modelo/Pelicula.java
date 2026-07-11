@@ -35,5 +35,12 @@ public class Pelicula {
     public void setMinutos(int minutos) {
         this.minutos = minutos;
     }
+
+    @Override
+    public String toString() {
+        return "Titulo:"+nombre + " Minutos:" + minutos;
+    }
+    
+    
     
 }

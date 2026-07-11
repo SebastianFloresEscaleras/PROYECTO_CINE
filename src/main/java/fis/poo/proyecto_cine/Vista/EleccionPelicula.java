@@ -4,6 +4,8 @@
  */
 package fis.poo.proyecto_cine.Vista;
 
+import fis.poo.proyecto_cine.Controlador.Controlador;
+
 /**
  *
  * @author sebas
@@ -13,11 +15,20 @@ public class EleccionPelicula extends javax.swing.JPanel {
     /**
      * Creates new form EleccionPelicula
      */
-    public EleccionPelicula() {
+    private Controlador controlador;
+    
+    public EleccionPelicula(Controlador controlador1) {
+        this.controlador = controlador1;
+        
         initComponents();
         
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
         
+        lblfuncion1.setText(this.controlador.getFuncion(0).devolverString());
+        lblfuncion2.setText(this.controlador.getFuncion(1).devolverString());
+        lblfuncion3.setText(this.controlador.getFuncion(2).devolverString());
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,13 +47,13 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblfuncionSeleccionada = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        lbladvertencia = new javax.swing.JLabel();
 
         lblfuncion1.setBackground(new java.awt.Color(153, 153, 255));
-        lblfuncion1.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion1.setFont(new java.awt.Font("BIZ UDPGothic", 1, 14)); // NOI18N
         lblfuncion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfuncion1.setText("Se muestra funcion 1");
         lblfuncion1.setOpaque(true);
@@ -54,22 +65,25 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jLabel2.setOpaque(true);
 
         lblfuncion2.setBackground(new java.awt.Color(153, 153, 255));
-        lblfuncion2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 14)); // NOI18N
         lblfuncion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfuncion2.setText("Se muestra funcion 2");
         lblfuncion2.setOpaque(true);
 
         lblfuncion3.setBackground(new java.awt.Color(153, 153, 255));
-        lblfuncion3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncion3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 14)); // NOI18N
         lblfuncion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfuncion3.setText("Se muestra funcion 3");
         lblfuncion3.setOpaque(true);
 
         jButton1.setText("Elegir");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Elegir");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Elegir");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jLabel5.setBackground(new java.awt.Color(153, 153, 255));
         jLabel5.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
@@ -77,11 +91,11 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jLabel5.setText("Funcion seleccionada");
         jLabel5.setOpaque(true);
 
-        jLabel6.setBackground(new java.awt.Color(255, 102, 102));
-        jLabel6.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Aqui se muestra");
-        jLabel6.setOpaque(true);
+        lblfuncionSeleccionada.setBackground(new java.awt.Color(255, 102, 102));
+        lblfuncionSeleccionada.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblfuncionSeleccionada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfuncionSeleccionada.setText("Aqui se muestra");
+        lblfuncionSeleccionada.setOpaque(true);
 
         jButton4.setText("Regresar");
         jButton4.addActionListener(this::jButton4ActionPerformed);
@@ -89,11 +103,10 @@ public class EleccionPelicula extends javax.swing.JPanel {
         jButton5.setText("Siguiente");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
-        jLabel7.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel7.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Aqui se muestra si no escoge nada le dice que escoja");
-        jLabel7.setOpaque(true);
+        lbladvertencia.setBackground(new java.awt.Color(153, 153, 255));
+        lbladvertencia.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lbladvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbladvertencia.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,42 +118,38 @@ public class EleccionPelicula extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblfuncion1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblfuncion3, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblfuncion2, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(lblfuncionSeleccionada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblfuncion1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblfuncion2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblfuncion3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(12, 12, 12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbladvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                     .addComponent(lblfuncion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -155,9 +164,9 @@ public class EleccionPelicula extends javax.swing.JPanel {
                 .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                    .addComponent(lblfuncionSeleccionada, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
                 .addGap(186, 186, 186)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                .addComponent(lbladvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -174,9 +183,36 @@ public class EleccionPelicula extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        
+        if((controlador.getFuncionElegida())== null){
+            lbladvertencia.setText("Por favor escoga una pelicula para continuar");
+        }else{
         ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
         padre.cambiarPanel("EleccionAsiento");
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         
+        lblfuncionSeleccionada.setText(this.controlador.getFuncion(0).devolverString());
+        this.controlador.setFuncionElegida(this.controlador.getFuncion(0)); 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        lblfuncionSeleccionada.setText(this.controlador.getFuncion(1).devolverString());
+        this.controlador.setFuncionElegida(this.controlador.getFuncion(1)); 
+
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        lblfuncionSeleccionada.setText(this.controlador.getFuncion(2).devolverString());
+        this.controlador.setFuncionElegida(this.controlador.getFuncion(2)); 
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -187,10 +223,10 @@ public class EleccionPelicula extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lbladvertencia;
     private javax.swing.JLabel lblfuncion1;
     private javax.swing.JLabel lblfuncion2;
     private javax.swing.JLabel lblfuncion3;
+    private javax.swing.JLabel lblfuncionSeleccionada;
     // End of variables declaration//GEN-END:variables
 }

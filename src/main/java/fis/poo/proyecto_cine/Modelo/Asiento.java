@@ -17,10 +17,15 @@ public class Asiento {
         this.posicionAsiento = posicionAsiento;
         this.disponible = disponible;
     }
+    
    // holi voy a modificar este codigo (daya)
 
     public String getPosicionAsiento() {
         return posicionAsiento;
+    }
+    
+    public boolean getdisponible(){
+        return this.disponible;
     }
 
     public void setPosicionAsiento(String posicionAsiento) {

@@ -11,12 +11,34 @@ public class Sala{
     
     private int numeroSala;
     private boolean estaDisponible = true;
-    private Asiento[] listaAsiento = {new Asiento("A1", estaDisponible),new Asiento("A2", estaDisponible),new Asiento("A3", estaDisponible),new Asiento("A4", estaDisponible),new Asiento("A5", estaDisponible),new Asiento("A6", estaDisponible),new Asiento("A7", estaDisponible),new Asiento("A8", estaDisponible),new Asiento("A9", estaDisponible) };
-
+    private Asiento[] listaAsiento = {new Asiento("A1", estaDisponible),new Asiento("A2", estaDisponible),new Asiento("A3", estaDisponible),new Asiento("B1", estaDisponible),new Asiento("B2", estaDisponible),new Asiento("B3", estaDisponible),new Asiento("C1", estaDisponible),new Asiento("C2", estaDisponible),new Asiento("C3", estaDisponible)};
+    private ArrayList<String> listaClaves = new ArrayList<>();
+    private ArrayList<Boolean> listaBooleanos = new ArrayList<>();
+    
     public Sala(int numeroSala, boolean estaDisponible) {
         this.numeroSala = numeroSala;
         this.estaDisponible = estaDisponible;            
     }
+    
+    /*
+    public void comprarAsiento(String clave){
+        for(Asiento a: listaAsiento){
+            this.listaClaves.add(a.getPosicionAsiento());
+        }
+        for(Asiento a: listaAsiento){
+            this.listaBooleanos.add(a.getdisponible());
+        }
+        
+        for(String r: listaClaves){
+            if(r.equals(clave)){
+                for(){
+                    
+                }
+            }
+        }
+    }
+    */
+    
 
     public int getNumeroSala() {
         return numeroSala;
@@ -34,6 +56,7 @@ public class Sala{
         this.estaDisponible = estaDisponible;
     }  
     
+    
     //le hago un aporte (daya)
     
     public Asiento[] getListaAsiento(){
@@ -48,14 +71,26 @@ public class Sala{
         return null;
     }
     
-    public boolean reservarAsiento(String posicion){
+    
+    public void reservarAsiento(String posicion){
         Asiento asiento = buscarAsiento(posicion);
         if(asiento != null && asiento.isDisponible()){
             asiento.ocuparAsiento();
-            return true;
+        for(Asiento a: listaAsiento){
+            if(a.getPosicionAsiento().equals(posicion)){
+                a.setDisponible(false);
+            }
+        } 
+        }else{
+            for(Asiento a: listaAsiento){
+            if(a.getPosicionAsiento().equals(posicion)){
+                a.setDisponible(true);
         }
-        return false;
     }
+        }
+    }
+    
+   
     
     public boolean hayAsientosDisponibles(){
         for(Asiento asiento : listaAsiento){
@@ -66,10 +101,18 @@ public class Sala{
         return false;
     }
     
+    
     public void mostrarAsiento(){
         for(Asiento asiento : listaAsiento){
             System.out.println(asiento);
         }
     }
+    
+    
+    public String toString(){
+        return "Sala: "+Integer.toString(this.numeroSala) ;
+    }
+    
+    
     
 }

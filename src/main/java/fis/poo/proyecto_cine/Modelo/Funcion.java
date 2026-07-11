@@ -32,5 +32,9 @@ public class Funcion {
         System.out.println("Horarios: " + horario);
         System.out.println("Sala: " + sala1.getNumeroSala());
     }
+    
+    public String devolverString(){
+        return " Id Funcion:"+this.idFuncion + " Horario:" +" "+this.horario + " " +this.pelicula1.toString() +" " +this.sala1.toString();
+    }
 
 }
