@@ -24,6 +24,7 @@ public class Controlador {
     private Persona persona1;
     private ArrayList<Funcion> listaFunciones = new ArrayList<>();
     private Funcion FuncionElegida;
+    private Funcion nuevaFuncion; // Esta variable va a guardar la función que el administrador cree
     //amigos en sala tenemos la sala disponible y como esta en composicion ya se instancian los asientos tambien
     Sala sala1 = new Sala(1, true);
     
@@ -93,16 +94,43 @@ public class Controlador {
         return FuncionElegida;
     }
     Validador validadorAdmin = new Validador(new java.util.ArrayList<>(), false);
-//nuevos metodos para la pantalla de validar administrador
-public boolean validarAdministrador(String codigo) {
+    //nuevos metodos para la pantalla de validar administrador
+    public boolean validarAdministrador(String codigo) {
     Administrador administradorTemp = new Administrador("Admin", codigo, 1);
     
     return validadorAdmin.validarAdmision(administradorTemp);
-}
+    }
 
-public boolean tieneAcceso() {
+    public boolean tieneAcceso() {
     return validadorAdmin.isTieneAcceso();
-}
+    }
     
+    //dede aqui nuevo codigo (daya)
     
+    public void crearNuevaFuncion(String idFuncion, String nombrePelicula, int duracion, int numeroSala, String horario){
+        Pelicula peliculaNueva = new Pelicula(nombrePelicula, duracion);
+        Sala salaNueva = new Sala(numeroSala, true);
+        
+        nuevaFuncion = new Funcion(idFuncion, horario,true,peliculaNueva,salaNueva);
+    }
+
+    public Funcion getNuevaFuncion() {
+        return nuevaFuncion;
+    }
+    
+    public boolean existeNuevaFuncion(){ //veridica si ADMIN ya creo una funcion antes de reemplazar una
+        return nuevaFuncion != null;
+    }
+    
+    public void reemplazarFuncion(int posicion){ // este sirve para los botnoes MODIFICAR
+        if(nuevaFuncion != null){
+            listaFunciones.set(posicion, nuevaFuncion);
+            nuevaFuncion = null;
+        }
+    }
+
+    public ArrayList<Funcion> getListaFunciones() {
+        return listaFunciones;
+    }
+     
 }
