@@ -23,7 +23,23 @@ public class Funcion {
     }
     
     //hago mi aporte (daya)
-    public boolean hayDisponibilidad(){
+    //faltaban los getters setters mi gente
+    public String getIdFuncion(){
+    return idFuncion;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public Pelicula getPelicula1() {
+        return pelicula1;
+    }
+    public Sala getSala1() {
+        return sala1;
+    }
+
+    public boolean hayDisponibilidad() {
         return sala1.hayAsientosDisponibles();
     }
     
