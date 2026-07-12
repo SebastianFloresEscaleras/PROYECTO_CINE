@@ -47,6 +47,19 @@ public class Asiento {
     public void liberarAsiento(){
         disponible = true;
     }
+    
+    //mi aporte (daya)
+    public boolean estaOcupado(){
+        return !disponible;
+    }
+    public boolean puedeSeleccionarse(){
+        return disponible;
+    }
+    public void cambiarEstado(){
+        disponible = !disponible;
+    }
+    
+    //
 
     @Override
     public String toString() {
