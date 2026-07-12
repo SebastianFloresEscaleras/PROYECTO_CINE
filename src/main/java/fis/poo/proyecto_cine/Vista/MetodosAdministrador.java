@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package fis.poo.proyecto_cine.Vista;
+import fis.poo.proyecto_cine.Controlador.Controlador;
+import fis.poo.proyecto_cine.Modelo.Funcion;
 
 /**
  *
@@ -31,21 +33,21 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnModFuncion1 = new javax.swing.JButton();
+        btnModFuncion2 = new javax.swing.JButton();
+        btnModFuncion3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jTextID_Funcion = new javax.swing.JTextField();
+        jTextNombrePelicula = new javax.swing.JTextField();
+        jTextDuracionPeli = new javax.swing.JTextField();
+        jTextNumSala = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnCrearFuncion = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -80,11 +82,14 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jButton1.setText("Regresar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton2.setText("Modificar");
+        btnModFuncion1.setText("Modificar");
+        btnModFuncion1.addActionListener(this::btnModFuncion1ActionPerformed);
 
-        jButton3.setText("Modificar");
+        btnModFuncion2.setText("Modificar");
+        btnModFuncion2.addActionListener(this::btnModFuncion2ActionPerformed);
 
-        jButton4.setText("Modificar");
+        btnModFuncion3.setText("Modificar");
+        btnModFuncion3.addActionListener(this::btnModFuncion3ActionPerformed);
 
         jLabel5.setText("ID Funcion");
 
@@ -93,6 +98,14 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jLabel7.setText("Duracion Pelicula");
 
         jLabel8.setText("Numero Sala");
+
+        jTextID_Funcion.addActionListener(this::jTextID_FuncionActionPerformed);
+
+        jTextNombrePelicula.addActionListener(this::jTextNombrePeliculaActionPerformed);
+
+        jTextDuracionPeli.addActionListener(this::jTextDuracionPeliActionPerformed);
+
+        jTextNumSala.addActionListener(this::jTextNumSalaActionPerformed);
 
         jLabel9.setText("Nueva Funcion");
 
@@ -110,7 +123,8 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel11.setOpaque(true);
 
-        jButton5.setText("Crear funcion");
+        btnCrearFuncion.setText("Crear funcion");
+        btnCrearFuncion.addActionListener(this::btnCrearFuncionActionPerformed);
 
         jLabel12.setBackground(new java.awt.Color(204, 255, 255));
         jLabel12.setFont(new java.awt.Font("BIZ UDPGothic", 1, 12)); // NOI18N
@@ -135,6 +149,16 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnCrearFuncion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,34 +166,27 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel8))
                                 .addGap(111, 111, 111)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField4))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextDuracionPeli, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                                        .addComponent(jTextNombrePelicula)
+                                        .addComponent(jTextID_Funcion)
+                                        .addComponent(jTextNumSala)))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(814, 814, 814))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(98, 98, 98))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jLabel5))
-                                .addGap(0, 770, Short.MAX_VALUE))
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,61 +194,61 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton4))))
+                                    .addComponent(btnModFuncion3)
+                                    .addComponent(btnModFuncion1)
+                                    .addComponent(btnModFuncion2))))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(36, 36, 36)
+                        .addGap(24, 24, 24)
                         .addComponent(jLabel6)
-                        .addGap(32, 32, 32)
+                        .addGap(23, 23, 23)
                         .addComponent(jLabel7)
-                        .addGap(45, 45, 45)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextNumSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                        .addComponent(jTextID_Funcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextNombrePelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextDuracionPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearFuncion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnModFuncion1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnModFuncion2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(btnModFuncion3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addComponent(jButton1)
-                .addGap(70, 70, 70))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -242,13 +259,128 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextID_FuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextID_FuncionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextID_FuncionActionPerformed
+
+    private void jTextNombrePeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombrePeliculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNombrePeliculaActionPerformed
+
+    private void jTextDuracionPeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDuracionPeliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextDuracionPeliActionPerformed
+
+    private void jTextNumSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNumSalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNumSalaActionPerformed
+
+    private void btnModFuncion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModFuncion1ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        Controlador miControlador = padre.getControlador();
+
+        if(!miControlador.existeNuevaFuncion()){
+            jLabel11.setText("Primero cree una nueva función.");
+            return;
+        }
+
+        miControlador.reemplazarFuncion(0);
+        Funcion funcion = miControlador.getListaFunciones().get(0);
+
+        jLabel2.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        jLabel10.setText("Aquí sale la función creada");
+        jTextID_Funcion.setText("");
+        jTextNombrePelicula.setText("");
+        jTextDuracionPeli.setText("");
+        jTextNumSala.setText("");
+        jLabel11.setText("Función 1 reemplazada.");
+
+    }//GEN-LAST:event_btnModFuncion1ActionPerformed
+
+    private void btnModFuncion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModFuncion2ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        Controlador miControlador = padre.getControlador();
+
+        if(!miControlador.existeNuevaFuncion()){
+            jLabel11.setText("Primero cree una nueva función.");
+            return;
+        }
+
+        miControlador.reemplazarFuncion(1);
+        Funcion funcion = miControlador.getListaFunciones().get(1);
+
+        jLabel3.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        jLabel10.setText("Aquí sale la función creada");
+        jTextID_Funcion.setText("");
+        jTextNombrePelicula.setText("");
+        jTextDuracionPeli.setText("");
+        jTextNumSala.setText("");
+        jLabel11.setText("Función 2 reemplazada.");
+    }//GEN-LAST:event_btnModFuncion2ActionPerformed
+
+    private void btnModFuncion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModFuncion3ActionPerformed
+        // TODO add your handling code here:
+        ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        Controlador miControlador = padre.getControlador();
+
+        if(!miControlador.existeNuevaFuncion()){
+            jLabel11.setText("Primero cree una nueva función.");
+            return;
+        }
+
+        miControlador.reemplazarFuncion(2);
+        Funcion funcion = miControlador.getListaFunciones().get(2);
+
+        jLabel4.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        jLabel10.setText("Aquí sale la función creada");
+        jTextID_Funcion.setText("");
+        jTextNombrePelicula.setText("");
+        jTextDuracionPeli.setText("");
+        jTextNumSala.setText("");
+        jLabel11.setText("Función 3 reemplazada.");
+    }//GEN-LAST:event_btnModFuncion3ActionPerformed
+
+    private void btnCrearFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearFuncionActionPerformed
+        // TODO add your handling code here:
+        String idFuncion = jTextID_Funcion.getText().trim();
+        String nombre = jTextNombrePelicula.getText().trim();
+        String duracionTexto = jTextDuracionPeli.getText().trim();
+        String salaTexto = jTextNumSala.getText().trim();
+        
+        if(idFuncion.isEmpty() || nombre.isEmpty() || duracionTexto.isEmpty() || salaTexto.isEmpty()){ // Validar campos vacíos
+            jLabel11.setText("Debe llenar todos los campos.");
+            return;
+        }
+        int duracion;
+        int numeroSala;
+
+        try{
+            duracion = Integer.parseInt(duracionTexto);
+            numeroSala = Integer.parseInt(salaTexto);
+
+        }catch(NumberFormatException e){
+            jLabel11.setText("Duración y sala deben ser números.");
+            return;
+        }
+        
+        ContenedorPrincipal padre =(ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+        Controlador miControlador = padre.getControlador();
+
+        miControlador.crearNuevaFuncion(idFuncion,nombre,duracion,numeroSala,"Pendiente");
+
+        jLabel10.setText(idFuncion + " - " + nombre + " - " +duracion + " min - Sala " +numeroSala);
+        jLabel11.setText("Función creada correctamente.");
+    }//GEN-LAST:event_btnCrearFuncionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCrearFuncion;
+    private javax.swing.JButton btnModFuncion1;
+    private javax.swing.JButton btnModFuncion2;
+    private javax.swing.JButton btnModFuncion3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -262,9 +394,9 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextDuracionPeli;
+    private javax.swing.JTextField jTextID_Funcion;
+    private javax.swing.JTextField jTextNombrePelicula;
+    private javax.swing.JTextField jTextNumSala;
     // End of variables declaration//GEN-END:variables
 }
