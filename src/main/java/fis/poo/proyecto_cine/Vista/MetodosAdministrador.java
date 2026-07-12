@@ -18,6 +18,26 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     public MetodosAdministrador() {
         initComponents();
     }
+    //ezte hace que aparezcan las funciones previament cargadas (daya)
+    public void actualizarFunciones(){
+
+    ContenedorPrincipal padre =
+            (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+    if(padre == null){
+        return;
+    }
+
+    Controlador miControlador = padre.getControlador();
+
+    Funcion f1 = miControlador.getListaFunciones().get(0);
+    Funcion f2 = miControlador.getListaFunciones().get(1);
+    Funcion f3 = miControlador.getListaFunciones().get(2);
+
+    jLabel2.setText(f1.devolverString());
+    jLabel3.setText(f2.devolverString());
+    jLabel4.setText(f3.devolverString());
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
