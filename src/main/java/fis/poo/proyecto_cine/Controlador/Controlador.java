@@ -10,6 +10,7 @@ import fis.poo.proyecto_cine.Modelo.Funcion;
 import fis.poo.proyecto_cine.Modelo.Pelicula;
 import fis.poo.proyecto_cine.Modelo.Persona;
 import fis.poo.proyecto_cine.Modelo.Sala;
+import fis.poo.proyecto_cine.Modelo.SeleccionAsientos;
 import fis.poo.proyecto_cine.Modelo.Validador;
 import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class Controlador {
     private Funcion nuevaFuncion; // Esta variable va a guardar la función que el administrador cree
     //amigos en sala tenemos la sala disponible y como esta en composicion ya se instancian los asientos tambien
     Sala sala1 = new Sala(1, true);
+    private SeleccionAsientos seleccion1 = new SeleccionAsientos();
     
     Pelicula peli1 = new Pelicula("Forest gump", 120);
     Pelicula peli2 = new Pelicula("Wachacalote", 120);
@@ -42,7 +44,7 @@ public class Controlador {
     }
     
     //los que esten false significa que fueron escogidos
-    public void estadoAsiento(String a){
+    public void estadoAsiento(String a){ // este nos va a servir para hacer BoletaAsiento
         for(Asiento rt: sala1.getListaAsiento()){
             if(rt.getPosicionAsiento().equals(a)){
                 
@@ -105,7 +107,7 @@ public class Controlador {
     return validadorAdmin.isTieneAcceso();
     }
     
-    //dede aqui nuevo codigo (daya)
+    //dede aqui nuevo codigo para MetodoAdministrador (daya)
     
     public void crearNuevaFuncion(String idFuncion, String nombrePelicula, int duracion, int numeroSala, String horario){
         Pelicula peliculaNueva = new Pelicula(nombrePelicula, duracion);
@@ -131,6 +133,25 @@ public class Controlador {
 
     public ArrayList<Funcion> getListaFunciones() {
         return listaFunciones;
+    }
+    
+    //dede aqui nuevo codigo para EleccionAsientos (daya)
+    public void seleccionAsientos(String asiento){
+        seleccion1.cambiarSeleccion(asiento);
+    }
+    public String getTextoAsientos(){
+        return seleccion1.mostrarAsientos();
+    }
+    public boolean hayAsientosSeleccionados(){
+        return !seleccion1.getListaAsientos().isEmpty();
+    }
+    public boolean asientoDisponible(String posicion){ // va s buscar un asiento
+        for(Asiento asiento : sala1.getListaAsiento()){
+            if(asiento.getPosicionAsiento().equals(posicion)){
+                return asiento.isDisponible();
+            }
+        }
+        return false;
     }
      
 }
