@@ -16,6 +16,7 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ContenedorPrincipal.class.getName());
     private final Controlador controlador1 = new Controlador();
     private MetodosAdministrador panelMetodosAdministrador;
+    private EleccionPelicula panelEleccionPelicula;
     
     /**
      * Creates new form ContenedorPrincipal
@@ -33,9 +34,11 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     
     panelMetodosAdministrador = new MetodosAdministrador();
     contenedorPrincipal.add(panelMetodosAdministrador, "MetodosAdministrador");
+    panelEleccionPelicula = new EleccionPelicula(this.controlador1);
+    contenedorPrincipal.add(panelEleccionPelicula, "EleccionPelicula");
     
     //contenedorPrincipal.add(new MetodosAdministrador(), "MetodosAdministrador");
-    contenedorPrincipal.add(new EleccionPelicula(this.controlador1), "EleccionPelicula");
+    //contenedorPrincipal.add(new EleccionPelicula(this.controlador1), "EleccionPelicula");
     contenedorPrincipal.add(new EleccionAsiento(this.controlador1), "EleccionAsiento");
     contenedorPrincipal.add(new BoletoFactura(), "BoletoFactura");
 
@@ -62,6 +65,9 @@ public class ContenedorPrincipal extends javax.swing.JFrame {
     public void cambiarPanel(String nombrePanel) {
         if(nombrePanel.equals("MetodosAdministrador")){
             panelMetodosAdministrador.actualizarFunciones();
+        }
+        if(nombrePanel.equals("EleccionPelicula")){
+        panelEleccionPelicula.actualizarFunciones();
         }
     java.awt.CardLayout cl = (java.awt.CardLayout) contenedorPrincipal.getLayout();
     cl.show(contenedorPrincipal, nombrePanel);
