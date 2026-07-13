@@ -29,6 +29,11 @@ public class EleccionPelicula extends javax.swing.JPanel {
         lblfuncion3.setText(this.controlador.getFuncion(2).devolverString());
     }
     
+    public void actualizarFunciones(){
+        lblfuncion1.setText(controlador.getFuncion(0).devolverString());
+        lblfuncion2.setText(controlador.getFuncion(1).devolverString());
+        lblfuncion3.setText(controlador.getFuncion(2).devolverString());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
