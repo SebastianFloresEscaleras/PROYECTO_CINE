@@ -34,9 +34,10 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     Funcion f2 = miControlador.getListaFunciones().get(1);
     Funcion f3 = miControlador.getListaFunciones().get(2);
 
-    jLabel2.setText(f1.devolverString());
-    jLabel3.setText(f2.devolverString());
-    jLabel4.setText(f3.devolverString());
+    lblFuncion1.setText(f1.devolverString());
+    lblFuncion2.setText(f2.devolverString());
+    lblFuncion3.setText(f3.devolverString());
+        
 }
 
     /**
@@ -49,9 +50,9 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblFuncion1 = new javax.swing.JLabel();
+        lblFuncion2 = new javax.swing.JLabel();
+        lblFuncion3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnModFuncion1 = new javax.swing.JButton();
         btnModFuncion2 = new javax.swing.JButton();
@@ -78,26 +79,26 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1.setOpaque(true);
 
-        jLabel2.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Funcion 1 (previamente cargada)");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setOpaque(true);
+        lblFuncion1.setBackground(new java.awt.Color(204, 255, 255));
+        lblFuncion1.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblFuncion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFuncion1.setText("Funcion 1 (previamente cargada)");
+        lblFuncion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFuncion1.setOpaque(true);
 
-        jLabel3.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Funcion 2 (previamente cargada)");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel3.setOpaque(true);
+        lblFuncion2.setBackground(new java.awt.Color(204, 255, 255));
+        lblFuncion2.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblFuncion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFuncion2.setText("Funcion 2 (previamente cargada)");
+        lblFuncion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFuncion2.setOpaque(true);
 
-        jLabel4.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel4.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Funcion 3 (previamente cargada)");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel4.setOpaque(true);
+        lblFuncion3.setBackground(new java.awt.Color(204, 255, 255));
+        lblFuncion3.setFont(new java.awt.Font("BIZ UDPGothic", 1, 24)); // NOI18N
+        lblFuncion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFuncion3.setText("Funcion 3 (previamente cargada)");
+        lblFuncion3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFuncion3.setOpaque(true);
 
         jButton1.setText("Regresar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
@@ -209,9 +210,9 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblFuncion3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblFuncion2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblFuncion1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnModFuncion3)
@@ -256,15 +257,15 @@ public class MetodosAdministrador extends javax.swing.JPanel {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFuncion1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModFuncion1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnModFuncion2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblFuncion2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFuncion3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModFuncion3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jButton1)
@@ -308,7 +309,7 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         miControlador.reemplazarFuncion(0);
         Funcion funcion = miControlador.getListaFunciones().get(0);
 
-        jLabel2.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        lblFuncion1.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
         jLabel10.setText("Aquí sale la función creada");
         jTextID_Funcion.setText("");
         jTextNombrePelicula.setText("");
@@ -331,7 +332,7 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         miControlador.reemplazarFuncion(1);
         Funcion funcion = miControlador.getListaFunciones().get(1);
 
-        jLabel3.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        lblFuncion2.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
         jLabel10.setText("Aquí sale la función creada");
         jTextID_Funcion.setText("");
         jTextNombrePelicula.setText("");
@@ -353,7 +354,7 @@ public class MetodosAdministrador extends javax.swing.JPanel {
         miControlador.reemplazarFuncion(2);
         Funcion funcion = miControlador.getListaFunciones().get(2);
 
-        jLabel4.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
+        lblFuncion3.setText(funcion.getPelicula1().getNombre()+ " Sala "+ funcion.getSala1().getNumeroSala());
         jLabel10.setText("Aquí sale la función creada");
         jTextID_Funcion.setText("");
         jTextNombrePelicula.setText("");
@@ -406,9 +407,6 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -418,5 +416,8 @@ public class MetodosAdministrador extends javax.swing.JPanel {
     private javax.swing.JTextField jTextID_Funcion;
     private javax.swing.JTextField jTextNombrePelicula;
     private javax.swing.JTextField jTextNumSala;
+    private javax.swing.JLabel lblFuncion1;
+    private javax.swing.JLabel lblFuncion2;
+    private javax.swing.JLabel lblFuncion3;
     // End of variables declaration//GEN-END:variables
 }
