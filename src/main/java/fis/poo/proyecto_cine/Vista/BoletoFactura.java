@@ -16,6 +16,22 @@ public class BoletoFactura extends javax.swing.JPanel {
     public BoletoFactura() {
         initComponents();
     }
+    //karlaaa
+    public void cargarResumen(){
+
+    ContenedorPrincipal padre =
+            (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+    if(padre != null){
+
+        jTextArea2.setText(
+                padre.getControlador().getResumenCompra()
+        );
+
+    }
+
+}
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,6 +66,7 @@ public class BoletoFactura extends javax.swing.JPanel {
         jLabel2.setOpaque(true);
 
         jButton1.setText("Pagar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jLabel4.setBackground(new java.awt.Color(153, 153, 153));
         jLabel4.setFont(new java.awt.Font("BIZ UDPGothic", 1, 14)); // NOI18N
@@ -137,7 +154,29 @@ public class BoletoFactura extends javax.swing.JPanel {
         ContenedorPrincipal padre = (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
         padre.cambiarPanel("EleccionAsiento");
         
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//Karlaa        
+// TODO add your handling code here:
+  ContenedorPrincipal padre =
+            (ContenedorPrincipal) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+    if(padre != null){
+
+        padre.getControlador().confirmarCompra();
+
+        jLabel3.setText("Pago realizado con éxito.");
+
+        jTextArea1.setText(
+                padre.getControlador().generarFactura()
+        );
+
+    }
+       
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

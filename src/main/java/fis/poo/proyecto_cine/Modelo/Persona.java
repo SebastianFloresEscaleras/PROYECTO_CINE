@@ -37,6 +37,15 @@ public abstract class Persona {
     public String getId() {
         return id;
     }
+    //Karlaa
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getTipoCliente() {
+        return tipoCliente;
+    }
     
     
     

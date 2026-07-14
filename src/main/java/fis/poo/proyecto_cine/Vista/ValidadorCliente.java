@@ -222,12 +222,15 @@ public class ValidadorCliente extends javax.swing.JPanel {
         Controlador miControlador = padre.getControlador();
         
         if(miControlador.validarCampos(this.nombre, this.id, this.tipoPersona)){
-        padre.cambiarPanel("EleccionPelicula"); 
-        }else{
-         
-        lbladvertencia.setText("Complete todos los campos para avanzar, serviran para comprar el voleto");
-        
-        }
+            //Karlaa:) guardar datoss
+        miControlador.registrarCliente(this.nombre, this.id, this.tipoPersona);    
+   padre.cambiarPanel("EleccionPelicula");
+
+}else{
+
+    lbladvertencia.setText("Complete todos los campos para avanzar, serviran para comprar el boleto");
+
+}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btntarifanormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntarifanormalActionPerformed

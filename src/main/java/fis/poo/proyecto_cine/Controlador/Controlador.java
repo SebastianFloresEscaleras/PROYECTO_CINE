@@ -13,6 +13,8 @@ import fis.poo.proyecto_cine.Modelo.Sala;
 import fis.poo.proyecto_cine.Modelo.SeleccionAsientos;
 import fis.poo.proyecto_cine.Modelo.Validador;
 import java.util.ArrayList;
+//Karla
+import fis.poo.proyecto_cine.Modelo.Factura;
 
 /**
  *
@@ -77,6 +79,98 @@ public class Controlador {
             persona1 = new Administrador(tipoUsuario, tipoUsuario, 0);
         }}
     
+    
+    //Karlaaa:)
+    public void registrarCliente(String nombre, String id, int tipoCliente){
+    persona1 = new Cliente(nombre, id, tipoCliente);
+}
+
+public Persona getPersona(){
+    return persona1;
+}
+public double getPrecioBoleto(){
+
+    if(persona1.getTipoCliente() == 1){
+        return 5.00;
+    }else{
+        return 3.50;
+    }
+
+}
+public String getTipoTarifa(){
+
+    if(persona1.getTipoCliente() == 1){
+        return "Tarifa normal";
+    }else{
+        return "Tarifa diferenciada";
+    }
+
+}
+public double calcularTotal(){
+
+    return seleccion1.getListaAsientos().size() * getPrecioBoleto();
+
+}
+public int getCantidadBoletos(){
+
+    return seleccion1.getListaAsientos().size();
+
+}
+public ArrayList<String> getListaAsientosSeleccionados(){
+
+    return seleccion1.getListaAsientos();
+
+}
+public String getResumenCompra(){
+
+    String texto = "";
+
+    texto += "PELÍCULA\n";
+    texto += FuncionElegida.getPelicula1().getNombre();
+
+    texto += "\n\nHorario: ";
+    texto += FuncionElegida.getHorario();
+
+    texto += "\nSala: ";
+    texto += FuncionElegida.getSala1().getNumeroSala();
+
+    texto += "\n\nAsientos:\n";
+    texto += seleccion1.mostrarAsientos();
+
+    texto += "\n\nCantidad de boletos: ";
+    texto += getCantidadBoletos();
+
+    texto += "\nPrecio por boleto: $";
+    texto += getPrecioBoleto();
+
+    texto += "\n\nTOTAL: $";
+    texto += calcularTotal();
+
+    return texto;
+
+}
+public void confirmarCompra(){
+
+    for(String asiento : seleccion1.getListaAsientos()){
+
+        sala1.reservarAsiento(asiento);
+
+    }
+
+}
+public String generarFactura(){
+
+    Factura factura = new Factura(
+            persona1,
+            FuncionElegida,
+            seleccion1.getListaAsientos(),
+            getPrecioBoleto()
+    );
+
+    return factura.generarFactura();
+
+}
+//hasta aquii, 10 metodos nuevos 
     //pantallaUsuario validacion 1
     public boolean validarCampos(String nombre, String id, int eleccion){
         
